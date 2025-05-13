@@ -102,23 +102,18 @@ main {
                 font-size: 1rem;
             }
 
-            button {
-                border: none;
-                width: 2rem;
-                background: none;
+            #icon {
+                fill: #17171A;
+                stroke: #E07B67;
+                stroke-width: 7;
+                transition: fill 0.3s;
                 cursor: pointer;
-
-                #icon {
-                    fill: #17171A;
-                    stroke: #E07B67;
-                    stroke-width: 7;
-                    transition: fill 0.3s;
-
-                    &:hover {
-                        fill: $brand-color;
-                    }
-                }
             }
+
+            #icon.filled,
+                #icon:hover {
+                    fill: #E07B67;
+                }
         }
 
         h2 {
