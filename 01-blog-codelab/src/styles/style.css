@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: #121214;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #17171a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 22rem;
+  gap: 3rem;
+}
+header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+}
+header h1 span {
+  color: #e07869;
+}
+header form {
+  width: 100%;
+  background-color: #202024;
+  border-radius: 8px;
+  border: 2px solid #252529;
+  height: 3.5rem;
+  padding: 1rem 1.5rem;
+}
+header form input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+header form input::-moz-placeholder {
+  color: #AFABB6;
+}
+header form input::placeholder {
+  color: #AFABB6;
+}
+header form:focus-within {
+  border: 2px solid #e07869;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 22rem;
+  gap: 2.5rem;
+}
+main section {
+  border: 2px solid #252529;
+  border-radius: 8px;
+  margin: 5rem 0;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+main section .infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main section .infos .date {
+  color: #e07869;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+main section .infos #icon {
+  fill: #17171A;
+  stroke: #E07B67;
+  stroke-width: 7;
+  transition: fill 0.3s;
+  cursor: pointer;
+}
+main section .infos #icon.filled,
+main section .infos #icon:hover {
+  fill: #E07B67;
+}
+main section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+}
+main section p {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 160%;
+  letter-spacing: 0%;
+  color: #AFABB6;
+}
+main section:hover {
+  border: 2px solid #e07869;
+}/*# sourceMappingURL=style.css.map */
