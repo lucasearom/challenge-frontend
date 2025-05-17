@@ -23,11 +23,33 @@ header {
   padding: 4rem 22rem;
   gap: 3rem;
 }
+@media only screen and (max-width: 48em) {
+  header {
+    padding: 4rem 2rem;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 20em) {
+  header {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) and (max-width: 120em) {
+  header {
+    padding: 4rem 22rem;
+  }
+}
 header h1 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
   color: #FFFFFF;
+}
+@media only screen and (max-width: 20em) {
+  header h1 {
+    font-size: 1.5rem;
+  }
 }
 header h1 span {
   color: #e07869;
@@ -51,11 +73,24 @@ header form input {
   font-weight: 500;
   font-family: "Inter", sans-serif;
 }
+@media only screen and (max-width: 20em) {
+  header form input {
+    font-size: 0.875rem;
+  }
+}
 header form input::-moz-placeholder {
   color: #AFABB6;
 }
 header form input::placeholder {
   color: #AFABB6;
+}
+@media only screen and (max-width: 20em) {
+  header form input::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  header form input::placeholder {
+    font-size: 0.875rem;
+  }
 }
 header form:focus-within {
   border: 2px solid #e07869;
@@ -69,6 +104,21 @@ main {
   padding: 0 22rem;
   gap: 2.5rem;
 }
+@media only screen and (max-width: 48em) {
+  main {
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 20em) {
+  main {
+    padding: 0 1.5rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  main {
+    padding: 0 2.5rem;
+  }
+}
 main section {
   border: 2px solid #252529;
   border-radius: 8px;
@@ -77,6 +127,21 @@ main section {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+@media only screen and (max-width: 48em) {
+  main section {
+    margin: 3.5rem 0;
+  }
+}
+@media only screen and (max-width: 20em) {
+  main section {
+    margin: 2.5rem 0;
+  }
+}
+@media only screen and (min-width: 48em) {
+  main section {
+    margin: 3.5rem 0;
+  }
 }
 main section .infos {
   display: flex;
@@ -89,12 +154,34 @@ main section .infos .date {
   font-weight: 500;
   font-size: 1rem;
 }
+@media only screen and (max-width: 48em) {
+  main section .infos .date {
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (max-width: 20em) {
+  main section .infos .date {
+    font-size: 0.75rem;
+  }
+}
 main section .infos #icon {
   fill: #17171A;
   stroke: #E07B67;
   stroke-width: 7;
   transition: fill 0.3s;
   cursor: pointer;
+}
+@media only screen and (max-width: 48em) {
+  main section .infos #icon {
+    width: 24;
+    height: 24;
+  }
+}
+@media only screen and (max-width: 48em) {
+  main section .infos #icon {
+    width: 20;
+    height: 20;
+  }
 }
 main section .infos #icon.filled,
 main section .infos #icon:hover {
@@ -108,6 +195,11 @@ main section h2 {
   letter-spacing: 0%;
   color: #FFFFFF;
 }
+@media only screen and (max-width: 48em) {
+  main section h2 {
+    font-size: 1.25rem;
+  }
+}
 main section p {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -115,6 +207,18 @@ main section p {
   line-height: 160%;
   letter-spacing: 0%;
   color: #AFABB6;
+}
+@media only screen and (max-width: 48em) {
+  main section p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 20em) {
+  main section p {
+    font-size: 0.875rem;
+    text-align: justify;
+  }
 }
 main section:hover {
   border: 2px solid #e07869;

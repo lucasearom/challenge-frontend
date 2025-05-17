@@ -14,6 +14,40 @@ $dark-60: #FFFFFF;
     text-decoration: none;
 }
 
+$breakpoints: (
+  xxs: 20em,  // 320px
+  xs: 30em,   // 480px
+  sm: 48em,   // 768px
+  md: 64em,   // 1024px
+  lg: 80em,   // 1280px
+  xl: 120em   // 1920px
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin rd($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin rd-between($min-key, $max-key) {
+  $min: map-get($breakpoints, $min-key);
+  $max: map-get($breakpoints, $max-key);
+
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
 body {
     background-color: $dark-10;
     width: 100%;
@@ -33,11 +67,29 @@ header {
     padding: 4rem 22rem;
     gap: 3rem;
 
+    @include mq(sm) {
+            padding: 4rem 2rem;
+            width: 100%;
+    }
+
+    @include mq(xxs) {
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    @include rd-between(sm, xl) {
+        padding: 4rem 22rem;
+    }
+
     h1 {
         font-family: "Space Grotesk", sans-serif;
         font-weight: 500;
         font-size: 2.5rem;
         color: $dark-60;
+
+        @include mq(xxs) {
+            font-size: 1.5rem;
+        }
 
         span {
             color: $brand-color;
@@ -63,8 +115,16 @@ header {
             font-weight: 500;
             font-family: "Inter", sans-serif;
 
+            @include mq(xxs) {
+                font-size: .875rem;
+            }
+
             &::placeholder {
                 color: $dark-50;
+
+                @include mq(xxs) {
+                    font-size: .875rem;
+                }
             }
         }
         &:focus-within {
@@ -81,6 +141,18 @@ main {
     padding: 0 22rem;
     gap: 2.5rem;
 
+    @include mq(sm) {
+        padding: 0 2rem;
+    }
+
+    @include mq(xxs) {
+        padding: 0 1.5rem;
+    }
+
+    @include rd(sm) {
+        padding: 0 2.5rem;
+    }
+
     section {
         border: 2px solid #252529;
         border-radius: 8px;
@@ -89,6 +161,18 @@ main {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
+
+        @include mq(sm) {
+            margin: 3.5rem 0;
+        }
+
+        @include mq(xxs) {
+            margin: 2.5rem 0;
+        }
+
+        @include rd(sm) {
+            margin: 3.5rem 0;
+        }
 
         .infos {
             display: flex;
@@ -100,6 +184,14 @@ main {
                 font-family: "Inter", sans-serif;
                 font-weight: 500;
                 font-size: 1rem;
+
+                @include mq(sm) {
+                    font-size: .875rem;
+                }
+
+                @include mq(xxs) {
+                    font-size: .75rem;
+                }
             }
 
             #icon {
@@ -108,6 +200,16 @@ main {
                 stroke-width: 7;
                 transition: fill 0.3s;
                 cursor: pointer;
+
+                @include mq(sm) {
+                    width: 24;
+                    height: 24;
+                }
+
+                @include mq(sm) {
+                    width: 20;
+                    height: 20;
+                }
             }
 
             #icon.filled,
@@ -123,6 +225,10 @@ main {
             line-height: 100%;
             letter-spacing: 0%;
             color: $dark-60;
+
+            @include mq(sm) {
+                font-size: 1.25rem;
+            }
         }
 
         p {
@@ -133,6 +239,15 @@ main {
             letter-spacing: 0%;
             color: $dark-50;
 
+            @include mq(sm) {
+                font-size: 1rem;
+                text-align: justify;
+            }
+
+            @include mq(xxs) {
+                font-size: .875rem;
+                text-align: justify;
+            }
         }
 
         &:hover {
